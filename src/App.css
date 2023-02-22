@@ -1,38 +1,181 @@
+:root {
+	--10-percent-color: rgb(43, 4, 74);
+	--10-percent-color-alpha-1: rgba(43, 4, 74, 0.7);
+	--10-percent-color-alpha-2: rgba(43, 4, 74, 0.5);
+}
+
 .App {
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.clickable {
+	cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.page-container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: auto;
+}
+.Navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	height: 65px;
+	display: flex;
+	align-items: center;
+	border-bottom: 2px solid #ccc;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+}
+.Navbar ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	padding: 0 75px;
+}
+a {
+	color: #aaa;
+	text-decoration: none;
+	transition: color 0.25s;
+}
+a:hover {
+	color: var(--10-percent-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Navbar ul li a {
+	color: #bbb;
+	text-decoration: none;
+	transition: color 0.25s;
+}
+.Navbar ul li a:hover {
+	color: var(--10-percent-color);
+}
+.Home {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 75%;
+}
+.Home h1,
+.ContactMe h1,
+.NotFound h1 {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	color: var(--10-percent-color);
+}
+.Home p,
+.ContactMe p {
+	font-weight: 600;
+	align-self: flex-start;
+}
+.problem-link-container {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: relative;
+	bottom: 50px;
+}
+.problem-1,
+.problem-2 {
+	height: 500px;
+	width: 75%;
+}
+.problem-1 form,
+.problem-2 form {
+	width: 350px;
+}
+.InputTextBox {
+	display: flex;
+	flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.InputTextBox label {
+	margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.InputTextBox input {
+	padding: 5px 7px;
+	outline: none;
+}
+.FizzBuzz,
+.Fib {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.results-container {
+	width: 200px;
+	height: 350px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px 25px 10px 10px;
+}
+.results-container .answer {
+	background-color: white;
+	padding: 5px 7px;
+	width: 100%;
+	font-size: 1rem;
+	font-weight: 500;
+	color: black;
+}
+.results-container .answer:hover {
+	background-color: #ccc;
+	color: rgb(15, 15, 15);
+}
+
+.Home .FizzBuzz form,
+.Home .Fib form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+.Home .Fib form {
+	margin-left: 25px;
+}
+
+button {
+	border: 1px solid #aaa;
+	border-radius: 5px;
+	background-color: white;
+	padding: 7px 15px;
+	font-size: 1rem;
+	font-weight: 600;
+	color: black;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	transition: all 0.1s ease-in;
+}
+
+button:hover {
+	border: 1px solid var(--10-percent-color-alpha-1);
+	color: var(--10-percent-color);
+	box-shadow: 0 0 5px var(--10-percent-color-alpha-2);
+}
+
+.Home .problem-1 form button,
+.Home .problem-2 form button {
+	margin-top: 15px;
+}
+
+.Fib button {
+	margin-top: 20px;
 }
